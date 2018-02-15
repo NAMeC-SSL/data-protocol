@@ -29,7 +29,7 @@ apt install lib32stdc++6
 To generate code for python:
 
 ```sh
-protoc --python_out=. sensor-data.proto
+protoc --python_out=. sensordata.proto
 ```
 
 Use the generated `sensordata_pb2.py` in your project.
@@ -39,5 +39,5 @@ Use the generated `sensordata_pb2.py` in your project.
 To generate code for C:
 
 ```sh
-protoc --nanopb_out=. sensor-data.proto
+protoc --nanopb_out=. sensordata.proto
 ```
