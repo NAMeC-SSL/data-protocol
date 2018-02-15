@@ -7,10 +7,9 @@ Sensor Data protocol definition using Google's Protocol Buffers.
 ### Nanopb
 
 Download Nanopb v0.3.9 from official website:
+https://jpa.kapsi.fi/nanopb/download/
 
-    https://jpa.kapsi.fi/nanopb/download/
-
-Extract the download archive.
+Extract the downloaded archive.
 
 In the rest of the document, `protoc` is the version distributed in this
 archive: `generator-bin/protoc`.
@@ -35,7 +34,7 @@ protoc --python_out=. sensor-data.proto
 
 Use the generated `sensordata_pb2.py` in your project.
 
-## C
+## Embedded C
 
 To generate code for C:
 
