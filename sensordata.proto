@@ -12,7 +12,7 @@ message SensorDataReading {
   uint32 pm1_0 = 7;
   uint32 pm2_5 = 8;
   uint32 pm4_0 = 9;
-  uint32 pm10 = 10;
+  uint32 pm100 = 10;
   uint32 no2 = 11;
   uint32 no2_hr = 12;
 }
