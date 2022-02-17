@@ -19,7 +19,7 @@ archive: `generator-bin/protoc`.
 Install Protocol Buffers compiler dependency:
 
 ```sh
-apt install lib32stdc++6
+apt install protobuf-compiler
 ```
 
 ## Code generation
