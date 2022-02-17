@@ -3,16 +3,16 @@ package telemetry;
 
 message SensorDataReading {
 
-  optional double temperature = 1;
-  optional double humidity = 2;
-  optional double pressure = 3;
-  optional uint32 co2 = 4;
-  optional uint32 hcho = 5;
-  optional uint32 tvoc = 6;
-  optional uint32 pm1_0 = 7;
-  optional uint32 pm2_5 = 8;
-  optional uint32 pm4_0 = 9;
-  optional uint32 pm10 = 10;
-  optional uint32 no2 = 11;
-  optional uint32 no2_hr = 12;
+  double temperature = 1;
+  double humidity = 2;
+  double pressure = 3;
+  uint32 co2 = 4;
+  uint32 hcho = 5;
+  uint32 tvoc = 6;
+  uint32 pm1_0 = 7;
+  uint32 pm2_5 = 8;
+  uint32 pm4_0 = 9;
+  uint32 pm10 = 10;
+  uint32 no2 = 11;
+  uint32 no2_hr = 12;
 }
