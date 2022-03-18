@@ -2,16 +2,16 @@ syntax ="proto3";
 package telemetry;
 
 message SensorDataReading {
-  double temperature = 1;
-  double humidity = 2;
-  double pressure = 3;
-  uint32 co2 = 4;
-  uint32 hcho = 5;
-  uint32 tvoc = 6;
-  uint32 pm1 = 7;
-  uint32 pm2_5 = 8;
-  uint32 pm4 = 9;
-  uint32 pm10 = 10;
-  uint32 no2 = 11;
-  uint32 no2_hr = 12;
+  double temperature = 1; // °C
+  double humidity = 2; // %RH
+  double pressure = 3; // 
+  uint32 co2 = 4; // ppm
+  double hcho = 5; // ppm
+  double tvoc = 6; // ppm
+  uint32 pm1 = 7; // µg/m3
+  uint32 pm2_5 = 8; // µg/m3
+  uint32 pm4 = 9; // µg/m3
+  uint32 pm10 = 10; // µg/m3
+  double no2 = 11; // ppm
+  double no2_hr = 12; // ppm
 }
