@@ -1,43 +1,15 @@
 # Sensor Data Protocol
-
 Sensor Data protocol definition using Google's Protocol Buffers.
 
 ## Prerequisites
-
-### Nanopb
-
-Download Nanopb v0.3.9 from official website:
+Download `Nanopb` from official website:
 https://jpa.kapsi.fi/nanopb/download/
 
 Extract the downloaded archive.
 
-In the rest of the document, `protoc` is the version distributed in this
-archive: `generator-bin/protoc`.
-
-### Ubuntu
-
-Install Protocol Buffers compiler dependency:
-
-```sh
-apt install protobuf-compiler
-```
-
 ## Code generation
+To generate code for embedded C:
 
-## Python
-
-To generate code for python:
-
-```sh
-protoc --python_out=. sensordata.proto
-```
-
-Use the generated `sensordata_pb2.py` in your project.
-
-## Embedded C
-
-To generate code for C:
-
-```sh
-protoc --nanopb_out=. sensordata.proto
+```shell
+./nanopb-x.y.z-linux-x86/generator-bin/nanopb_generator sensordata.proto
 ```
