@@ -12,6 +12,6 @@ message SensorDataReading {
   uint32 pm2_5 = 8; // µg/m3
   uint32 pm4 = 9; // µg/m3
   uint32 pm10 = 10; // µg/m3
-  float no2 = 11; // ppm
-  float no2_hr = 12; // ppm
+  float no2_v = 11; // V
+  float no2_hr_v = 12; // V
 }
