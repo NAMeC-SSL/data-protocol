@@ -15,13 +15,18 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10sensordata.proto\"A\n\x14MainBoardToBrushless\x12\x1a\n\x07\x63ommand\x18\x01 \x01(\x0e\x32\t.Commands\x12\r\n\x05speed\x18\x02 \x01(\x02\"C\n\x14\x42rushlessToMainBoard\x12\x13\n\x0b\x65rror_count\x18\x01 \x01(\r\x12\x16\n\x0emeasured_speed\x18\x02 \x01(\x02\"V\n\rIAToMainBoard\x12\x14\n\x0cnormal_speed\x18\x01 \x01(\x02\x12\x18\n\x10tangential_speed\x18\x02 \x01(\x02\x12\x15\n\rangular_speed\x18\x03 \x01(\x02\"q\n\rMainboardToIA\x12\x1d\n\x15measured_normal_speed\x18\x01 \x01(\x02\x12!\n\x19measured_tangential_speed\x18\x02 \x01(\x02\x12\x1e\n\x16measured_angular_speed\x18\x03 \x01(\x02*(\n\x08\x43ommands\x12\x08\n\x04STOP\x10\x00\x12\x07\n\x03RUN\x10\x01\x12\t\n\x05\x42REAK\x10\x02\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10sensordata.proto\"A\n\x14MainBoardToBrushless\x12\x1a\n\x07\x63ommand\x18\x01 \x01(\x0e\x32\t.Commands\x12\r\n\x05speed\x18\x02 \x01(\x02\"C\n\x14\x42rushlessToMainBoard\x12\x13\n\x0b\x65rror_count\x18\x01 \x01(\r\x12\x16\n\x0emeasured_speed\x18\x02 \x01(\x02\"\x96\x01\n\rIAToMainBoard\x12\x14\n\x0cnormal_speed\x18\x01 \x01(\x02\x12\x18\n\x10tangential_speed\x18\x02 \x01(\x02\x12\x15\n\rangular_speed\x18\x03 \x01(\x02\x12\r\n\x05\x62reak\x18\x04 \x01(\x08\x12\x1b\n\nkicker_cmd\x18\x05 \x01(\x0e\x32\x07.Kicker\x12\x12\n\nkick_power\x18\x06 \x01(\x02\"q\n\rMainboardToIA\x12\x1d\n\x15measured_normal_speed\x18\x01 \x01(\x02\x12!\n\x19measured_tangential_speed\x18\x02 \x01(\x02\x12\x1e\n\x16measured_angular_speed\x18\x03 \x01(\x02*(\n\x08\x43ommands\x12\x08\n\x04STOP\x10\x00\x12\x07\n\x03RUN\x10\x01\x12\t\n\x05\x42REAK\x10\x02*+\n\x06Kicker\x12\x0b\n\x07NO_KICK\x10\x00\x12\t\n\x05KICK1\x10\x01\x12\t\n\x05KICK2\x10\x02\x62\x06proto3')
 
 _COMMANDS = DESCRIPTOR.enum_types_by_name['Commands']
 Commands = enum_type_wrapper.EnumTypeWrapper(_COMMANDS)
+_KICKER = DESCRIPTOR.enum_types_by_name['Kicker']
+Kicker = enum_type_wrapper.EnumTypeWrapper(_KICKER)
 STOP = 0
 RUN = 1
 BREAK = 2
+NO_KICK = 0
+KICK1 = 1
+KICK2 = 2
 
 
 _MAINBOARDTOBRUSHLESS = DESCRIPTOR.message_types_by_name['MainBoardToBrushless']
@@ -59,14 +64,16 @@ _sym_db.RegisterMessage(MainboardToIA)
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _COMMANDS._serialized_start=359
-  _COMMANDS._serialized_end=399
+  _COMMANDS._serialized_start=424
+  _COMMANDS._serialized_end=464
+  _KICKER._serialized_start=466
+  _KICKER._serialized_end=509
   _MAINBOARDTOBRUSHLESS._serialized_start=20
   _MAINBOARDTOBRUSHLESS._serialized_end=85
   _BRUSHLESSTOMAINBOARD._serialized_start=87
   _BRUSHLESSTOMAINBOARD._serialized_end=154
-  _IATOMAINBOARD._serialized_start=156
-  _IATOMAINBOARD._serialized_end=242
-  _MAINBOARDTOIA._serialized_start=244
-  _MAINBOARDTOIA._serialized_end=357
+  _IATOMAINBOARD._serialized_start=157
+  _IATOMAINBOARD._serialized_end=307
+  _MAINBOARDTOIA._serialized_start=309
+  _MAINBOARDTOIA._serialized_end=422
 # @@protoc_insertion_point(module_scope)

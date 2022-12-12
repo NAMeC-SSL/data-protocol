@@ -6,6 +6,12 @@ enum Commands {
   BREAK = 2;
 }
 
+enum Kicker {
+  NO_KICK = 0;
+  KICK1 = 1;
+  KICK2 = 2;
+}
+
 message MainBoardToBrushless {
   Commands command = 1; // Brushless command
   float speed = 2; // m.s-1
@@ -20,6 +26,9 @@ message IAToMainBoard {
   float normal_speed = 1; // m.s-1
   float tangential_speed = 2; // m.s-1
   float angular_speed = 3; // rad.s-1
+  bool break = 4;
+  Kicker kicker_cmd = 5;
+  float kick_power = 6; // kick power (uS) 
 }
 
 message MainboardToIA {
