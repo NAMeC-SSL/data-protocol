@@ -32,9 +32,10 @@ typedef struct _IAToMainBoard {
     float normal_speed; /* m.s-1 */
     float tangential_speed; /* m.s-1 */
     float angular_speed; /* rad.s-1 */
-    bool break;
+    bool motor_break;
     Kicker kicker_cmd;
     float kick_power; /* kick power (uS) */
+    bool charge; /* charge kicker */
 } IAToMainBoard;
 
 typedef struct _MainBoardToBrushless { 
@@ -66,11 +67,11 @@ extern "C" {
 /* Initializer values for message structs */
 #define MainBoardToBrushless_init_default        {_Commands_MIN, 0}
 #define BrushlessToMainBoard_init_default        {0, 0}
-#define IAToMainBoard_init_default               {0, 0, 0, 0, _Kicker_MIN, 0}
+#define IAToMainBoard_init_default               {0, 0, 0, 0, _Kicker_MIN, 0, 0}
 #define MainboardToIA_init_default               {0, 0, 0}
 #define MainBoardToBrushless_init_zero           {_Commands_MIN, 0}
 #define BrushlessToMainBoard_init_zero           {0, 0}
-#define IAToMainBoard_init_zero                  {0, 0, 0, 0, _Kicker_MIN, 0}
+#define IAToMainBoard_init_zero                  {0, 0, 0, 0, _Kicker_MIN, 0, 0}
 #define MainboardToIA_init_zero                  {0, 0, 0}
 
 /* Field tags (for use in manual encoding/decoding) */
@@ -79,9 +80,10 @@ extern "C" {
 #define IAToMainBoard_normal_speed_tag           1
 #define IAToMainBoard_tangential_speed_tag       2
 #define IAToMainBoard_angular_speed_tag          3
-#define IAToMainBoard_break_tag                  4
+#define IAToMainBoard_motor_break_tag            4
 #define IAToMainBoard_kicker_cmd_tag             5
 #define IAToMainBoard_kick_power_tag             6
+#define IAToMainBoard_charge_tag                 7
 #define MainBoardToBrushless_command_tag         1
 #define MainBoardToBrushless_speed_tag           2
 #define MainboardToIA_measured_normal_speed_tag  1
@@ -105,9 +107,10 @@ X(a, STATIC,   SINGULAR, FLOAT,    measured_speed,    2)
 X(a, STATIC,   SINGULAR, FLOAT,    normal_speed,      1) \
 X(a, STATIC,   SINGULAR, FLOAT,    tangential_speed,   2) \
 X(a, STATIC,   SINGULAR, FLOAT,    angular_speed,     3) \
-X(a, STATIC,   SINGULAR, BOOL,     break,             4) \
+X(a, STATIC,   SINGULAR, BOOL,     motor_break,       4) \
 X(a, STATIC,   SINGULAR, UENUM,    kicker_cmd,        5) \
-X(a, STATIC,   SINGULAR, FLOAT,    kick_power,        6)
+X(a, STATIC,   SINGULAR, FLOAT,    kick_power,        6) \
+X(a, STATIC,   SINGULAR, BOOL,     charge,            7)
 #define IAToMainBoard_CALLBACK NULL
 #define IAToMainBoard_DEFAULT NULL
 
@@ -131,7 +134,7 @@ extern const pb_msgdesc_t MainboardToIA_msg;
 
 /* Maximum encoded size of messages (where known) */
 #define BrushlessToMainBoard_size                11
-#define IAToMainBoard_size                       24
+#define IAToMainBoard_size                       26
 #define MainBoardToBrushless_size                7
 #define MainboardToIA_size                       15
 

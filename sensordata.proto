@@ -26,9 +26,10 @@ message IAToMainBoard {
   float normal_speed = 1; // m.s-1
   float tangential_speed = 2; // m.s-1
   float angular_speed = 3; // rad.s-1
-  bool break = 4;
+  bool motor_break = 4;
   Kicker kicker_cmd = 5;
-  float kick_power = 6; // kick power (uS) 
+  float kick_power = 6; // kick power (uS)
+  bool charge = 7; // charge kicker
 }
 
 message MainboardToIA {
