@@ -30,6 +30,7 @@ message IAToMainBoard {
   Kicker kicker_cmd = 5;
   float kick_power = 6; // kick power (uS)
   bool charge = 7; // charge kicker
+  bool dribbler = 8; // Enable / disable dribbler
 }
 
 message MainboardToIA {
