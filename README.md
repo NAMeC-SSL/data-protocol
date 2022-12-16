@@ -1,5 +1,5 @@
-# Sensor Data Protocol
-Sensor Data protocol definition using Google's Protocol Buffers.
+# SSL Data Protocol
+SSL Data protocol definition using Google's Protocol Buffers.
 
 ## Prerequisites
 Download `Nanopb` from official website:
@@ -11,5 +11,5 @@ Extract the downloaded archive.
 To generate code for embedded C:
 
 ```shell
-./nanopb-x.y.z-linux-x86/generator-bin/nanopb_generator sensordata.proto
+./nanopb-x.y.z-linux-x86/generator-bin/nanopb_generator ssl_data.proto
 ```
