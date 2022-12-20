@@ -45,6 +45,11 @@ typedef struct _MainBoardToBrushless {
     float speed; /* m.s-1 */
 } MainBoardToBrushless;
 
+typedef struct _MainBoardToDribbler { 
+    Commands command; /* Brushless command */
+    float speed;
+} MainBoardToDribbler;
+
 typedef struct _MainboardToIA { 
     uint32_t robot_id; /* Robot identifier */
     float measured_normal_speed; /* m.s-1 */
@@ -69,10 +74,12 @@ extern "C" {
 
 /* Initializer values for message structs */
 #define MainBoardToBrushless_init_default        {_Commands_MIN, 0}
+#define MainBoardToDribbler_init_default         {_Commands_MIN, 0}
 #define BrushlessToMainBoard_init_default        {0, 0}
 #define IAToMainBoard_init_default               {0, 0, 0, 0, 0, _Kicker_MIN, 0, 0, 0}
 #define MainboardToIA_init_default               {0, 0, 0, 0}
 #define MainBoardToBrushless_init_zero           {_Commands_MIN, 0}
+#define MainBoardToDribbler_init_zero            {_Commands_MIN, 0}
 #define BrushlessToMainBoard_init_zero           {0, 0}
 #define IAToMainBoard_init_zero                  {0, 0, 0, 0, 0, _Kicker_MIN, 0, 0, 0}
 #define MainboardToIA_init_zero                  {0, 0, 0, 0}
@@ -91,6 +98,8 @@ extern "C" {
 #define IAToMainBoard_dribbler_tag               9
 #define MainBoardToBrushless_command_tag         1
 #define MainBoardToBrushless_speed_tag           2
+#define MainBoardToDribbler_command_tag          1
+#define MainBoardToDribbler_speed_tag            2
 #define MainboardToIA_robot_id_tag               1
 #define MainboardToIA_measured_normal_speed_tag  2
 #define MainboardToIA_measured_tangential_speed_tag 3
@@ -102,6 +111,12 @@ X(a, STATIC,   SINGULAR, UENUM,    command,           1) \
 X(a, STATIC,   SINGULAR, FLOAT,    speed,             2)
 #define MainBoardToBrushless_CALLBACK NULL
 #define MainBoardToBrushless_DEFAULT NULL
+
+#define MainBoardToDribbler_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UENUM,    command,           1) \
+X(a, STATIC,   SINGULAR, FLOAT,    speed,             2)
+#define MainBoardToDribbler_CALLBACK NULL
+#define MainBoardToDribbler_DEFAULT NULL
 
 #define BrushlessToMainBoard_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UINT32,   error_count,       1) \
@@ -131,12 +146,14 @@ X(a, STATIC,   SINGULAR, FLOAT,    measured_angular_speed,   4)
 #define MainboardToIA_DEFAULT NULL
 
 extern const pb_msgdesc_t MainBoardToBrushless_msg;
+extern const pb_msgdesc_t MainBoardToDribbler_msg;
 extern const pb_msgdesc_t BrushlessToMainBoard_msg;
 extern const pb_msgdesc_t IAToMainBoard_msg;
 extern const pb_msgdesc_t MainboardToIA_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define MainBoardToBrushless_fields &MainBoardToBrushless_msg
+#define MainBoardToDribbler_fields &MainBoardToDribbler_msg
 #define BrushlessToMainBoard_fields &BrushlessToMainBoard_msg
 #define IAToMainBoard_fields &IAToMainBoard_msg
 #define MainboardToIA_fields &MainboardToIA_msg
@@ -145,6 +162,7 @@ extern const pb_msgdesc_t MainboardToIA_msg;
 #define BrushlessToMainBoard_size                11
 #define IAToMainBoard_size                       34
 #define MainBoardToBrushless_size                7
+#define MainBoardToDribbler_size                 7
 #define MainboardToIA_size                       21
 
 #ifdef __cplusplus

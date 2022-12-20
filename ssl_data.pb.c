@@ -9,6 +9,9 @@
 PB_BIND(MainBoardToBrushless, MainBoardToBrushless, AUTO)
 
 
+PB_BIND(MainBoardToDribbler, MainBoardToDribbler, AUTO)
+
+
 PB_BIND(BrushlessToMainBoard, BrushlessToMainBoard, AUTO)
 
 

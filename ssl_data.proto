@@ -17,6 +17,11 @@ message MainBoardToBrushless {
   float speed = 2; // m.s-1
 }
 
+message MainBoardToDribbler {
+  Commands command = 1; // Brushless command
+  float speed = 2;
+}
+
 message BrushlessToMainBoard {
   uint32 error_count = 1; // Number of SPI transmission errors
   float measured_speed = 2; // m.s-1
