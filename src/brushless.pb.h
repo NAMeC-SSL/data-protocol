@@ -17,20 +17,20 @@ typedef enum _Commands {
 } Commands;
 
 /* Struct definitions */
-typedef struct _MainboardToBrushless {
+typedef struct _MainBoardToBrushless {
     Commands command; /* Brushless command */
     float speed; /* m.s-1 */
-} MainboardToBrushless;
+} MainBoardToBrushless;
 
-typedef struct _BrushlessToMainboard {
+typedef struct _BrushlessToMainBoard {
     uint32_t error_count; /* Number of SPI transmission errors */
     float measured_speed; /* m.s-1 */
-} BrushlessToMainboard;
+} BrushlessToMainBoard;
 
-typedef struct _MainboardToDribbler {
+typedef struct _MainBoardToDribbler {
     Commands command;
     float speed;
-} MainboardToDribbler;
+} MainBoardToDribbler;
 
 
 #ifdef __cplusplus
@@ -42,60 +42,60 @@ extern "C" {
 #define _Commands_MAX Commands_BREAK
 #define _Commands_ARRAYSIZE ((Commands)(Commands_BREAK+1))
 
-#define MainboardToBrushless_command_ENUMTYPE Commands
+#define MainBoardToBrushless_command_ENUMTYPE Commands
 
 
-#define MainboardToDribbler_command_ENUMTYPE Commands
+#define MainBoardToDribbler_command_ENUMTYPE Commands
 
 
 /* Initializer values for message structs */
-#define MainboardToBrushless_init_default        {_Commands_MIN, 0}
-#define BrushlessToMainboard_init_default        {0, 0}
-#define MainboardToDribbler_init_default         {_Commands_MIN, 0}
-#define MainboardToBrushless_init_zero           {_Commands_MIN, 0}
-#define BrushlessToMainboard_init_zero           {0, 0}
-#define MainboardToDribbler_init_zero            {_Commands_MIN, 0}
+#define MainBoardToBrushless_init_default        {_Commands_MIN, 0}
+#define BrushlessToMainBoard_init_default        {0, 0}
+#define MainBoardToDribbler_init_default         {_Commands_MIN, 0}
+#define MainBoardToBrushless_init_zero           {_Commands_MIN, 0}
+#define BrushlessToMainBoard_init_zero           {0, 0}
+#define MainBoardToDribbler_init_zero            {_Commands_MIN, 0}
 
 /* Field tags (for use in manual encoding/decoding) */
-#define MainboardToBrushless_command_tag         1
-#define MainboardToBrushless_speed_tag           2
-#define BrushlessToMainboard_error_count_tag     1
-#define BrushlessToMainboard_measured_speed_tag  2
-#define MainboardToDribbler_command_tag          1
-#define MainboardToDribbler_speed_tag            2
+#define MainBoardToBrushless_command_tag         1
+#define MainBoardToBrushless_speed_tag           2
+#define BrushlessToMainBoard_error_count_tag     1
+#define BrushlessToMainBoard_measured_speed_tag  2
+#define MainBoardToDribbler_command_tag          1
+#define MainBoardToDribbler_speed_tag            2
 
 /* Struct field encoding specification for nanopb */
-#define MainboardToBrushless_FIELDLIST(X, a) \
+#define MainBoardToBrushless_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UENUM,    command,           1) \
 X(a, STATIC,   SINGULAR, FLOAT,    speed,             2)
-#define MainboardToBrushless_CALLBACK NULL
-#define MainboardToBrushless_DEFAULT NULL
+#define MainBoardToBrushless_CALLBACK NULL
+#define MainBoardToBrushless_DEFAULT NULL
 
-#define BrushlessToMainboard_FIELDLIST(X, a) \
+#define BrushlessToMainBoard_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UINT32,   error_count,       1) \
 X(a, STATIC,   SINGULAR, FLOAT,    measured_speed,    2)
-#define BrushlessToMainboard_CALLBACK NULL
-#define BrushlessToMainboard_DEFAULT NULL
+#define BrushlessToMainBoard_CALLBACK NULL
+#define BrushlessToMainBoard_DEFAULT NULL
 
-#define MainboardToDribbler_FIELDLIST(X, a) \
+#define MainBoardToDribbler_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UENUM,    command,           1) \
 X(a, STATIC,   SINGULAR, FLOAT,    speed,             2)
-#define MainboardToDribbler_CALLBACK NULL
-#define MainboardToDribbler_DEFAULT NULL
+#define MainBoardToDribbler_CALLBACK NULL
+#define MainBoardToDribbler_DEFAULT NULL
 
-extern const pb_msgdesc_t MainboardToBrushless_msg;
-extern const pb_msgdesc_t BrushlessToMainboard_msg;
-extern const pb_msgdesc_t MainboardToDribbler_msg;
+extern const pb_msgdesc_t MainBoardToBrushless_msg;
+extern const pb_msgdesc_t BrushlessToMainBoard_msg;
+extern const pb_msgdesc_t MainBoardToDribbler_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
-#define MainboardToBrushless_fields &MainboardToBrushless_msg
-#define BrushlessToMainboard_fields &BrushlessToMainboard_msg
-#define MainboardToDribbler_fields &MainboardToDribbler_msg
+#define MainBoardToBrushless_fields &MainBoardToBrushless_msg
+#define BrushlessToMainBoard_fields &BrushlessToMainBoard_msg
+#define MainBoardToDribbler_fields &MainBoardToDribbler_msg
 
 /* Maximum encoded size of messages (where known) */
-#define BrushlessToMainboard_size                11
-#define MainboardToBrushless_size                7
-#define MainboardToDribbler_size                 7
+#define BrushlessToMainBoard_size                11
+#define MainBoardToBrushless_size                7
+#define MainBoardToDribbler_size                 7
 
 #ifdef __cplusplus
 } /* extern "C" */

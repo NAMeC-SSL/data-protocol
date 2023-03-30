@@ -6,13 +6,13 @@
 #error Regenerate this file with the current version of nanopb generator.
 #endif
 
-PB_BIND(MainboardToBrushless, MainboardToBrushless, AUTO)
+PB_BIND(MainBoardToBrushless, MainBoardToBrushless, AUTO)
 
 
-PB_BIND(BrushlessToMainboard, BrushlessToMainboard, AUTO)
+PB_BIND(BrushlessToMainBoard, BrushlessToMainBoard, AUTO)
 
 
-PB_BIND(MainboardToDribbler, MainboardToDribbler, AUTO)
+PB_BIND(MainBoardToDribbler, MainBoardToDribbler, AUTO)
 
 
 
